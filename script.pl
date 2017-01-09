@@ -123,6 +123,7 @@ if ($isoID = &check_canoncial){
 }
 
 open(my $file,'>',$argOpts{'o'});
+print $file "Gene\tMutationAA\tVariant Description\tCross-Reference (ENSG)\tCross-Reference (ENSP)\tCross-Reference (ENST)\tEntry\tEntry Name\tFeature ID\tGene Name\tIsoID\tLength\tSequence\tCosmic ID\tCount\tMutation Description\tHistology Subtype 1\tHistology Subtype 2\tHistology Subtype3\tPrimary Histology\tPrimary Sites\tSite Subtype 1\tSite Subtype 2\tTumor Origin\n";
 foreach my $geneEnsembl (sort keys %uniprotHash){
     if(my %cosmicHash = &cosmic_part($geneEnsembl,$argOpts{'email'})){
         foreach my $mutation (sort keys $uniprotHash{$geneEnsembl}){
