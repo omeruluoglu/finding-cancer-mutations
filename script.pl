@@ -55,7 +55,7 @@ my %content;
 my @lines = split("\n", $uniprotContent);
 foreach my $line (@lines){
     #print $line."\n";
-    if ($line =~ m/^P.*/) {
+    if ($line =~ m/$search/) {
         my @columns = split("\t", $line);
         my $entry = $columns[0];
         $outputFile = $search.".txt";
@@ -134,6 +134,7 @@ foreach my $geneEnsembl (sort keys %uniprotHash){
                 foreach my $valueCosmic (sort keys $cosmicHash{$geneEnsembl}{$mutation}){
                     if(ref($cosmicHash{$geneEnsembl}{$mutation}{$valueCosmic}) eq 'ARRAY'){
                         print $file join( ";", @{$cosmicHash{$geneEnsembl}{$mutation}{$valueCosmic}});
+						print $file "\n";
                     }else{
                         print $file $cosmicHash{$geneEnsembl}{$mutation}{$valueCosmic}."\t";
                     }

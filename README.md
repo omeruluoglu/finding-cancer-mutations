@@ -4,6 +4,11 @@
 Given a protein identifier find/list the cancer mutations in the region provided.
 
 ## Steps
+*
+*
+*
+*
+*
 
 ## Team Members
 * [İrem Karaca](https://github.com/iremkaraca)
