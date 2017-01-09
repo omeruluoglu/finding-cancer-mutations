@@ -134,7 +134,7 @@ foreach my $geneEnsembl (sort keys %uniprotHash){
                 foreach my $valueCosmic (sort keys $cosmicHash{$geneEnsembl}{$mutation}){
                     if(ref($cosmicHash{$geneEnsembl}{$mutation}{$valueCosmic}) eq 'ARRAY'){
                         print $file join( ";", @{$cosmicHash{$geneEnsembl}{$mutation}{$valueCosmic}});
-						print $file "\n";
+						print $file "\t";
                     }else{
                         print $file $cosmicHash{$geneEnsembl}{$mutation}{$valueCosmic}."\t";
                     }
